@@ -1,0 +1,42 @@
+package tunominayaa;
+
+// La clase EmpleadoAsalariado que extiende a Empleado.
+
+public class EmpleadoAsalariado extends Empleado {
+   private double salarioSemanal;
+
+   // constructor
+   public EmpleadoAsalariado( String nombre, String apellido, 
+      String numeroSeguroSocial, double salario )
+   {
+      super( nombre, apellido, numeroSeguroSocial ); 
+      establecerSalarioSemanal( salario );
+   } 
+
+   // establecer el salario del empleado asalariado
+   public double establecerSalarioSemanal( double salario)
+   {
+      salarioSemanal = salario * 7;
+       return 0;
+   } 
+
+   // devolver el salario del empleado asalariado
+   public double obtenerSalarioSemanal()
+   {
+      return salarioSemanal;
+   } 
+
+   // calcular el pago del empleado asalariado;
+   // sobrescribir el m�todo abstracto ingresos en Empleado
+   @Override
+   public double ingresos()
+   {
+      return obtenerSalarioSemanal();
+   } 
+
+   // devolver la representaci�n String del objeto EmpleadoAsalariado
+   public String toString()
+   {
+      return "Empleado asalariado: " + " "+ super.toString() + " "+ "Salario semanal: " + salarioSemanal + "\n";
+   } 
+} // fin de la clase EmpleadoAsalariado

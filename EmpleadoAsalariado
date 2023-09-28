@@ -9,7 +9,7 @@ public class EmpleadoAsalariado extends Empleado {
    public EmpleadoAsalariado( String nombre, String apellido, 
       String numeroSeguroSocial, double salario )
    {
-      super( nombre, apellido, numeroSeguroSocial ); 
+      super( nombre, apellido, numeroSeguroSocial, salario ); 
       establecerSalarioSemanal( salario );
    } 
 
@@ -28,7 +28,6 @@ public class EmpleadoAsalariado extends Empleado {
 
    // calcular el pago del empleado asalariado;
    // sobrescribir el m�todo abstracto ingresos en Empleado
-   @Override
    public double ingresos()
    {
       return obtenerSalarioSemanal();

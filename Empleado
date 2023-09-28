@@ -5,13 +5,15 @@ public abstract class Empleado {
    private String primerNombre;
    private String apellidoPaterno;
    private String numeroSeguroSocial;
+   private double sueldo;
 
    // constructor
-   public Empleado( String nombre, String apellido, String ssn )
+   public Empleado( String nombre, String apellido, String ssn, double salario )
    {
       primerNombre = nombre;
       apellidoPaterno = apellido;
       numeroSeguroSocial = ssn;
+      sueldo = salario;
    } 
 
    // establecer el primer nombre
@@ -49,12 +51,24 @@ public abstract class Empleado {
    {
       return numeroSeguroSocial;
    } 
+   
+   public void establecerSueldo( double salario )
+   {
+      sueldo = salario;  // deber�a validarse
+   } 
+
+   // devolver el n�mero de seguro social
+   public double establecerSueldo()
+   {
+      return sueldo;
+   } 
 
    // devolver representaci�n String del objeto Empleado
    public String toString()
    {
       return obtenerPrimerNombre() + " " + obtenerApellidoPaterno() +
-         "\nNumero de seguro social: " + obtenerNumeroSeguroSocial() + "\n";
+         "\nNumero de seguro social: " + obtenerNumeroSeguroSocial() + 
+          "\nSueldo: " + establecerSueldo() +"\n";
    } 
 
    // m�todo abstracto sobrescrito por las subclases
